@@ -1,0 +1,23 @@
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm fixed-top" aria-label="Fourth navbar example">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarsExample04">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li>
+            <a class="nav-link active" aria-current="page" href="/movie">Movies</a>
+          </li>
+        </ul>
+        <div>
+          <form role="home" class="row g-3" style="margin-left: 10px;" action="/home" method="get">
+            <div class="text-center">
+              <input class="form-control" type="home" name="movie_name" placeholder="Search for movie by name" aria-label="Search">
+            </div>
+            <div class="text-center" style="margin-left: 10px;">
+              <button type="submit" class="btn btn btn-info" name="search">Search</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <a href="/register" type="button" class="btn btn-info " style="float: right;">Sign Up</a>
+      <a href="/login" type="button" class="btn btn-dark "  style="float: right;margin-left: 30px;">Login</a>
+    </div>
+  </nav>

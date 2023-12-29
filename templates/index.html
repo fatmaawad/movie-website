@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+		<title>Home Page</title>
+   <style>
+	body
+	{
+		background-image: url({{url_for('static',filename='hm.jpg')}});
+	}
+   </style>
+</head>
+<body>
+    <body class="centered-body">
+		<div class="container-fluid">
+			{% include 'includes/alert.html' %}
+			<div class="row justify-content-center">
+				{% for movie in movies %}
+				<div class="col-md-6 col-lg-4 form-container p-4 mt-5 me-1">
+					<div class="row">
+						<div class="col-3">
+							<img
+								src="{{ url_for('static', filename=movie[4]) }}"
+								alt=""
+								width="150"
+								class="img-fluid"
+							/>
+						</div>
+						<div class="col">
+							<h2>Title: {{ movie[2] }}</h2>
+							<p>Description: {{movie[3]}}</p>
+							<a class="btn btn-primary float-end" href="{{ url_for('getMovie', movie_id=movie[0]) }}"
+								>Watch Now</a
+							>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/close-all-alerts.js') }}"></script>
+	</body>
+    
+    <footer>
+        <p>&copy; 2023 MovieFlix</p>
+    </footer>
+</body>
+</html>
